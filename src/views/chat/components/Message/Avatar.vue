@@ -21,7 +21,7 @@ const avatar = computed(() => userStore.userInfo.avatar)
     <NAvatar v-else round :src="defaultAvatar" />
   </template>
   <span v-else class="text-[28px] dark:text-white">
-    <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" aria-hidden="true" viewBox="0 0 128 128" enable-background="new 0 0 32 32" xml:space="preserve">  <image
+    <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" aria-hidden="true" viewBox="0 0 128 128" enable-background="new 0 0 48 48" xml:space="preserve">  <image
       id="image0" width="128" height="128" x="0" y="0"
       href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAKpGlDQ1BpY2MAAEiJlZcHUFPpFse/
 e9NDQksIHUJvgnQCSAmhBVB6FZWQBAglxEBQsSEiruBaEBEBG7oooOCqFFlsiGJbFBSwL8gioqyL
