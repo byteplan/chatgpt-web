@@ -6,6 +6,10 @@ on:
   release:
     types: [created] # 表示在创建新的 Release 时触发
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_docker:
     name: Build docker
@@ -29,6 +33,13 @@ jobs:
           registry: ${{ secrets.DOCKER_REGISTRY }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v4
@@ -40,3 +51,9 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_REGISTRY }}/chatgpt-web:${{ github.ref_name }}
             ${{ secrets.DOCKER_REGISTRY }}/chatgpt-web:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
