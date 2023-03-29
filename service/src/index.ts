@@ -9,7 +9,7 @@ import { isNotEmptyString } from './utils/is'
 const app = express()
 const router = express.Router()
 
-app.use(express.static('public'))
+app.use('/chatgpt', express.static('public'))
 app.use(express.json())
 
 app.all('*', (_, res, next) => {
@@ -81,7 +81,7 @@ router.post('/verify', async (req, res) => {
 })
 
 app.use('', router)
-app.use('/api', router)
+app.use('/chatgpt/api', router)
 app.set('trust proxy', 1)
 
 app.listen(3002, () => globalThis.console.log('Server is running on port 3002'))
