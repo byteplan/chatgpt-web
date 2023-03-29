@@ -13,15 +13,15 @@ const { language } = useLanguage()
  */
 const themeOverrides = {
   common: {
-    primaryColor: '#2474FFC8',
-    hoverColor: '#2474ff',
-    primaryColorHover: '#2474ff',
-    caretColor: '#247ff',
+    primaryColor: '#1890ff',
+    hoverColor: '#1890ff',
+    primaryColorHover: '#1890ff',
+    caretColor: '#1890ff',
   },
   Button: {
-    colorHoverPrimary: '#2474FF98',
-    borderPrimary: '#2474FF78',
-    borderHoverPrimary: '#2474FF98',
+    colorHoverPrimary: '#1890FFC8',
+    borderPrimary: '#1890FF78',
+    borderHoverPrimary: '#1890FF98',
   },
   Select: {
     peers: {
