@@ -4,8 +4,33 @@ import { NaiveProvider } from '@/components/common'
 import { useTheme } from '@/hooks/useTheme'
 import { useLanguage } from '@/hooks/useLanguage'
 
-const { theme, themeOverrides } = useTheme()
+const { theme } = useTheme()
 const { language } = useLanguage()
+
+/**
+ * js 文件下使用这个做类型提示
+ * @type import('naive-ui').GlobalThemeOverrides
+ */
+const themeOverrides = {
+  common: {
+    primaryColor: '#2474FFC8',
+    hoverColor: '#2474ff',
+    primaryColorHover: '#2474ff',
+    caretColor: '#247ff',
+  },
+  Button: {
+    colorHoverPrimary: '#2474FF98',
+    borderPrimary: '#2474FF78',
+    borderHoverPrimary: '#2474FF98',
+  },
+  Select: {
+    peers: {
+      InternalSelectMenu: {
+        optionTextColorActive: '#000',
+      },
+    },
+  },
+}
 </script>
 
 <template>
