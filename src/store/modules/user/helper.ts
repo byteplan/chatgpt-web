@@ -15,7 +15,7 @@ export interface UserState {
 export function defaultSetting(): UserState {
   return {
     userInfo: {
-      avatar: 'https://cloud.byteplan.com/static/logo@2x.f6190737.png',
+      avatar: 'https://raw.githubusercontent.com/byteplan/chatgpt-web/main/src/assets/avatar.jpg',
       name: 'BytePlan',
       description: '一个由OpenAI开发的大型语言模型',
     },
