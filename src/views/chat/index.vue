@@ -388,17 +388,21 @@ function handleClear() {
 }
 
 function handleEnter(event: KeyboardEvent) {
-  if (!isMobile.value) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-      event.preventDefault()
-      handleSubmit()
-    }
-  }
-  else {
-    if (event.key === 'Enter' && event.ctrlKey) {
-      event.preventDefault()
-      handleSubmit()
-    }
+  // if (!isMobile.value) {
+  //   if (event.key === 'Enter' && !event.shiftKey) {
+  //     event.preventDefault()
+  //     handleSubmit()
+  //   }
+  // }
+  // else {
+  //   if (event.key === 'Enter' && event.ctrlKey) {
+  //     event.preventDefault()
+  //     handleSubmit()
+  //   }
+  // }
+  if (event.key === 'Enter' && !event.shiftKey) {
+    event.preventDefault()
+    handleSubmit()
   }
 }
 
@@ -436,8 +440,8 @@ const renderOption = (option: { label: string }) => {
 }
 
 const placeholder = computed(() => {
-  if (isMobile.value)
-    return t('chat.placeholderMobile')
+  // if (isMobile.value)
+  //   return t('chat.placeholderMobile')
   return t('chat.placeholder')
 })
 
