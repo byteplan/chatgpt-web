@@ -31,7 +31,6 @@ const themeOverrides = {
     },
   },
 }
-console.log(112)
 </script>
 
 <template>
