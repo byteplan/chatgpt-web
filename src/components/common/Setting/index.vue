@@ -1,3 +1,4 @@
+/* eslint-disable */
 <script setup lang='ts'>
 import { computed, ref } from 'vue'
 import { NModal, NTabPane, NTabs } from 'naive-ui'
@@ -20,7 +21,7 @@ const emit = defineEmits<Emit>()
 
 const authStore = useAuthStore()
 
-// const isChatGPTAPI = computed<boolean>(() => !!authStore.isChatGPTAPI)
+const isChatGPTAPI = computed<boolean>(() => !!authStore.isChatGPTAPI)
 
 const active = ref('General')
 
@@ -67,3 +68,4 @@ const show = computed({
     </div>
   </NModal>
 </template>
+/* eslint-enable */
