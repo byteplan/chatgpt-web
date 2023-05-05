@@ -78,6 +78,38 @@
 		</div>
 	</div>
 	<script type="module" src="/src/main.ts"></script>
+  <script>
+    (function (c, b, d, a) {
+      const netMap = {
+        'https://dev.byteplan.com': 'daily',
+        'https://testapp.byteplan.com': 'pre',
+        'https://uatapp.byteplan.com': 'gray',
+        'https://cloud.byteplan.com': 'prod',
+      }
+      let env = 'local'
+      const net = window.origin
+
+      // eslint-disable-next-line antfu/if-newline
+      if (netMap[net]) env = netMap[net]
+      // eslint-disable-next-line antfu/if-newline
+      if (env === 'local') return
+    
+      c[a] || (c[a] = {})
+      c[a].config = {
+        pid: 'jepir6dwu9@ffc799a9f98ccdb',
+        appType: 'web',
+        imgUrl: 'https://arms-retcode.aliyuncs.com/r.png?',
+        sendResource: true,
+        enableLinkTrace: true,
+        behavior: true,
+        useFmp: true,
+        enableSPA: true,
+        environment: env,
+      }
+      // eslint-disable-next-line no-restricted-syntax, no-with, no-undef, max-statements-per-line
+      with (b) with (body) with (insertBefore(createElement('script'), firstChild)) setAttribute('crossorigin', '', (src = d))
+    })(window, document, 'https://retcode.alicdn.com/retcode/bl.js', '__bl')
+  </script>
 </body>
 
 </html>
