@@ -105,6 +105,15 @@
         useFmp: true,
         enableSPA: true,
         environment: env,
+        parseHash: function parseHash() {
+          return 'chatgpt'
+        },
+        setUsername: function setUsername() {
+          const { data: { userInfo } } = JSON.parse(window.localStorage.getItem('userStorage'))
+          const { tenantCode, id, environmentInfo } = userInfo
+          const username = tenantCode ? `${tenantCode}-${id}` : id
+          return `${environmentInfo}-${username}`
+        },
       }
       // eslint-disable-next-line no-restricted-syntax, no-with, no-undef, max-statements-per-line
       with (b) with (body) with (insertBefore(createElement('script'), firstChild)) setAttribute('crossorigin', '', (src = d))
