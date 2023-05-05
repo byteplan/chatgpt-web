@@ -89,6 +89,11 @@
       let env = 'local'
       const net = window.origin
 
+      // eslint-disable-next-line no-console
+      console.log(window.origin, 'window.origin')
+      // eslint-disable-next-line no-console
+      console.log(JSON.parse(window.localStorage.getItem('userStorage')), 'userStorage')
+
       // eslint-disable-next-line antfu/if-newline
       if (netMap[net]) env = netMap[net]
       // eslint-disable-next-line antfu/if-newline
